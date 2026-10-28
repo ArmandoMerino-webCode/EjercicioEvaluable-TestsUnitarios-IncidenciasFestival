@@ -1,78 +1,65 @@
-# Pruebas unitarias --- API de incidencias de un festival
+# Pruebas unitarias — API de incidencias de un festival
 
-Proyecto en C# orientado a comprobar el comportamiento de la lógica de
-una API REST para la gestión de incidencias de un festival cultural.
+## Descripción
 
-## Objetivo
-
-Practicar la creación y ejecución de pruebas unitarias, verificando
-tanto los casos correctos como los errores de validación y las reglas de
-negocio.
+Proyecto de una API para gestionar incidencias de un festival. Incluye pruebas unitarias para comprobar el comportamiento de las operaciones principales y sus validaciones.
 
 ## Tecnologías utilizadas
 
--   **C#**
--   **.NET 10**
--   **xUnit** para definir y ejecutar las pruebas automatizadas
--   **Git y GitHub** para el control de versiones y la publicación del
-    proyecto
+- **C#**
+- **.NET 10**
+- **xUnit** para las pruebas unitarias
+- **Git y GitHub** para el control de versiones
 
-## ¿Qué se prueba?
+## Resumen de las pruebas
 
-Las pruebas cubren distintos comportamientos del servicio de
-incidencias:
+En la última ejecución documentada, **las 11 pruebas unitarias pasaron correctamente**.
 
--   Consulta de festivales e incidencias.
--   Comprobación de errores cuando se consulta un festival que no
-    existe.
--   Creación de incidencias en festivales activos.
--   Rechazo de operaciones no permitidas, como crear incidencias en
-    festivales inactivos.
--   Validación de los datos, como la longitud de la zona y de la
-    descripción.
--   Validación de especialidades técnicas.
--   Asignación de incidencias a equipos técnicos.
--   Resolución de incidencias y validación del texto de resolución.
--   Consulta del resumen del festival y recuento de incidencias por
-    estado.
+| Área comprobada | Qué se verifica |
+|---|---|
+| Consulta de festivales e incidencias | Que se puedan consultar los datos correspondientes. |
+| Festival inexistente | Que la API gestione correctamente la búsqueda de un festival que no existe. |
+| Creación de incidencias | Que se permita crear una incidencia para un festival activo. |
+| Festival inactivo | Que no se permita crear una incidencia para un festival inactivo. |
+| Validación de datos | Que se validen la zona y la longitud de la descripción. |
+| Especialidad técnica | Que se valide el valor de la especialidad técnica mediante el tipo enumerado correspondiente. |
+| Asignación de equipo | Que una incidencia pueda asignarse a un equipo. |
+| Resolución de incidencias | Que se pueda resolver una incidencia y se validen los datos necesarios. |
+| Resumen del festival | Que se calculen los recuentos de incidencias del resumen. |
+
+> **Resultado:** 11 pruebas superadas en la última ejecución documentada. Ejecuta `dotnet test` para comprobar el resultado en tu entorno actual.
 
 ## Estructura del repositorio
 
-``` text
+```text
 EjercicioEvaluable-TestsUnitarios-IncidenciasFestival/
-├── FestivalIncidencias.Tests/   # Proyecto de pruebas
-├── IncidenciasFestivalApi/      # Proyecto de la API
-├── .gitignore
+├── FestivalIncidencias.Tests/
+├── IncidenciasFestivalApi/
 ├── Memoria-Pruebas-Unitarias-IncidenciasFestival.pdf
-└── README.md
+├── README.md
+└── .gitignore
 ```
 
-## Ejecutar las pruebas
+*La estructura puede variar si se añaden archivos o carpetas al proyecto.*
 
-Necesitas tener instalado el SDK de .NET compatible con el proyecto.
+## Cómo ejecutar las pruebas
 
-Desde la carpeta raíz del repositorio, ejecuta:
+Abre una terminal en la carpeta que contiene la solución y ejecuta:
 
-``` bash
+```bash
 dotnet test
 ```
 
-También puedes abrir la solución en Visual Studio y ejecutar las pruebas
-desde **Test Explorer**.
-
-## Resultado
-
-En la ejecución documentada del proyecto, las **11 pruebas unitarias**
-finalizaron correctamente. Las pruebas permiten comprobar el
-comportamiento esperado del servicio y detectar errores en los casos de
-validación y reglas de negocio.
+El comando compila los proyectos necesarios y ejecuta las pruebas configuradas.
 
 ## Documentación
 
-En el repositorio se incluye
-`Memoria-Pruebas-Unitarias-IncidenciasFestival.pdf`, con explicaciones
-del proceso, ejemplos y evidencias de ejecución.
+En la raíz del repositorio se incluye el documento:
+
+`Memoria-Pruebas-Unitarias-IncidenciasFestival.pdf`
+
+Este PDF contiene la memoria del proyecto y complementa la información de este README.
 
 ## Autor
 
-**Armando Merino**
+Armando Merino
